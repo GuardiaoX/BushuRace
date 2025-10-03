@@ -1,5 +1,10 @@
 const botoes = document.querySelectorAll(".option")
-let ingamekanji
+
+let game = {
+    kanjiList :  undefined,
+    time : undefined,
+    score : undefined
+}
 
 const kanji = {
     id : 0,
@@ -20,26 +25,26 @@ const kanji2 = {
     lookalike : ["⺃","⺅","⼍","⼕", "⼯","⼺"]
 }
 
-let kanjiList = [kanji, kanji1, kanji2]
+let a = [kanji, kanji1, kanji2]
 
 bushuRace()
 
-botoes.forEach(e => e.addEventListener("click",a => selectOption(e)));
 
 function bushuRace(){
-    ingamekanji = kanjiList[0]
-    let options = ingamekanji.radicals.concat(ingamekanji.lookalike)
-    botoes.forEach((e,i) => e.innerHTML = options[i])
-    
+    game.kanjiList = a;
+    let ingamekanji;
+    let lifes = 3
+       
 }
 
-function selectOption(button){
-    console.log(button)
+
+/*function selectOption(button){
+    console.log(ingamekanji.radicals.includes(button.innerHTML))
     if(ingamekanji.radicals.includes(button.innerHTML)){
         ingamekanji.radicals.includes(button.innerHTML)
-        button.color = "red"
+        button.style.color = "red"
     }
-}
+}*/
 
 
 
